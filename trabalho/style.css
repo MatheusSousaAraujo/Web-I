@@ -1,0 +1,22 @@
+.cabecalho {
+    background-color: rgba(25, 98, 182, 0.3);
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.filho-imagem {
+    width: 40vw;
+    border-radius:30px;
+    min-width: 40px;
+}
+.texto{
+    font-size: x-large;
+}
+.logo{
+    border-radius: 50% ;
+    height: 100px;
+    width: 100px;
+
+}
