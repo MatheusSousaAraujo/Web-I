@@ -1,0 +1,43 @@
+.cabecalho {
+    background-color: rgba(25, 98, 182, 0.3);
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.filho-imagem {
+    width: 40vw;
+    border-radius:30px;
+    min-width: 40px;
+}
+.texto{
+    font-size: x-large;
+}
+.logo{
+    border-radius: 30px ;
+    height: 100px;
+    width: 100px;
+
+}
+.borda{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(1, 72, 179);
+    background-color: rgb(196, 196, 196);
+    border-radius: 30px;
+    padding: 1em;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.w50{
+    width: 50%;
+}
+
+.colorAlternative{
+    padding: 60px 0;
+}
+.colorAlternative:nth-child(odd){
+    background-color: #e9ecef;
+}
