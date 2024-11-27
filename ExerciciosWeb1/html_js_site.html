@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando Sites</title>
+    <style>
+        body {
+            background-color: rgb(92, 179, 236);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        img {
+            width: 400px;
+        }
+
+        ul.nivel1 {
+            font-size: large;
+            font-weight: bold;
+        }
+
+        ul.nivel2 {
+            font-size: medium;
+            font-weight: lighter;
+        }
+
+        button {
+            border-radius: 10px;
+            font-size: large;
+            background-color: cornflowerblue;
+        }
+
+        input {
+            border: 2px solid cornflowerblue;
+            border-radius: 4px
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <h1>Aprendendo a criar Sites</h1>
+        <div>
+            <img src="images.png">
+        </div>
+        <h2>Conteúdos</h2>
+        <ul class="nivel1">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Design Gráfico
+                <ul class="nivel2">
+                    <li>Desenho vetorial com Inkscape</li>
+                </ul>
+            <li>Edição de imagens com Gimp</li>
+            </li>
+        </ul>
+        <h2>0 quanto eu gosto de cada conteúdo...</h2>
+        <p><label>Conteúdo:
+                <input type="text" id="conteudo" placeholder="Nome do conteúdo">
+            </label>
+        </p>
+        <h3>Digite um valor de 1 a 5</h3>
+        <p><label>Escala:
+                <input type="number" id="escala" placeholder="O quanto eu gosto">
+            </label>
+        </p>
+        <button onClick="mensagem()">Clique aqui!</button>
+
+        <script>
+            function mensagem() {
+                let conteudo = document.getElementById("conteudo").value
+                let escala = document.getElementById("escala").value
+                var mensagem = ""
+                if (escala > 3) {
+                    mensagem = "Eu gosto de " + conteudo
+                } else if (escala == 3) {
+                    mensagem = "Nem gosto nem desgosto de conteudo"
+                } else {
+                    mensagem = "Eu não gosto de" + conteudo
+                }
+                window.alert(mensagem)
+            }
+        </script>
+
+    </body>
+
+</html>

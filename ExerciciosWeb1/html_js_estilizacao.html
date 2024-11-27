@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilçização</object></title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: rgb(43, 140, 250);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        div {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            width: 40%;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            margin-right: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color:rgb(43, 140, 250);
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            margin-bottom: 5px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+       
+
+        
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>Controle de Estoque</h1>
+        <p id="valorEstoque">Estoque: 100</p>
+    </header>
+    <main>
+        <div>
+            <h2>Compra</h2>
+            <label for="quantidadeCompra">Quantidade:</label> <input type="number" id="quantidadeCompra" min="1">
+            <button onclick="comprar()">Comprar</button>
+        </div>
+        <div>
+            <h2>Venda</h2>
+            <label for="quantidadeVenda">Quantidade:</label> <input type="number" id="quantidadeVenda" min="1">
+            <button onclick="vender()">Vender</button>
+        </div>
+    </main>
+</body>
+
+<script>
+    var estoque = 100;
+
+    function comprar() {
+        var quantidadeCompra = parseInt(document.getElementById("quantidadeCompra").value);
+        if (!isNaN(quantidadeCompra) && quantidadeCompra > 0) {
+            estoque += quantidadeCompra;
+            atualizarEstoque();
+        } else {
+            alert("Por favor, insira uma quantidade válida.");
+        }
+    }
+
+    function vender() {
+        var quantidadeVenda = parseInt(document.getElementById("quantidadeVenda").value);
+        if (!isNaN(quantidadeVenda) && quantidadeVenda > 0) {
+            if (quantidadeVenda <= estoque) {
+                estoque -= quantidadeVenda;
+                atualizarEstoque();
+            } else {
+                alert("Quantidade insuficiente em estoque.");
+            }
+        } else {
+            alert("Por favor, insira uma quantidade válida.");
+        }
+    }
+
+    function atualizarEstoque() {
+        document.getElementById("valorEstoque").innerHTML = "Estoque: " + estoque;
+    }
+
+</script>
+
+</html>

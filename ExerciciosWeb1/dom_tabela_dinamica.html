@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        th {
+            background: lightblue;
+        }
+
+        th,
+        td {
+            padding: 10px 20px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <script>
+        let table = document.createElement("table");
+        let thead = document.createElement("thead");
+        let tbody = document.createElement("tbody")
+
+        table.appendChild(thead);
+        table.appendChild(tbody)
+        document.getElementById("body").appendChild(table);
+
+        let linha_1 = document.createElement("tr");
+        let cabecalho_1 = document.createElement("th");
+        cabecalho_1.innerHTML = "Número"
+        let cabecalho_2 = document.createElement("th");
+        cabecalho_2.innerHTML = "Nome"
+        let cabecalho_3 = document.createElement("th");
+        cabecalho_3.innerHTML = "Idade"
+
+        linha_1.appendChild(cabecalho_1);
+        linha_1.appendChild(cabecalho_2);
+        linha_1.appendChild(cabecalho_3);
+        thead.appendChild(linha_1);
+
+        let linha_2 = document.createElement("tr");
+        let linha_2_data1 = document.createElement("td");
+        linha_2_data1.innerHTML = "1."
+        let linha_2_data2 = document.createElement("td");
+        linha_2_data2.innerHTML = "Fulano"
+        let linha_2_data3 = document.createElement("td");
+        linha_2_data3.innerHTML = "30"
+
+        linha_2.appendChild(linha_2_data1);
+        linha_2.appendChild(linha_2_data2);
+        linha_2.appendChild(linha_2_data3);
+        tbody.appendChild(linha_2);
+
+        let linha_3 = document.createElement("tr");
+        let linha_3_data1 = document.createElement("td");
+        linha_3_data1.innerHTML = "2."
+        let linha_3_data2 = document.createElement("td");
+        linha_3_data2.innerHTML = "Ciclano"
+        let linha_3_data3 = document.createElement("td");
+        linha_3_data3.innerHTML = "60"
+
+        linha_3.appendChild(linha_3_data1);
+        linha_3.appendChild(linha_3_data2);
+        linha_3.appendChild(linha_3_data3);
+        tbody.appendChild(linha_3);
+
+        for (i = 3; i <= 5; i++) {
+
+            let linha = document.createElement("tr");
+            let linha_data_1 = document.createElement("td");
+            linha_data_1.innerHTML = i + ".";
+            let linha_data_2 = document.createElement("td");
+            linha_data_2.innerHTML = "";
+            let linha_data_3 = document.createElement("td");
+            linha_data_3.innerHTML = "";
+            linha.appendChild(linha_data_1);
+            linha.appendChild(linha_data_2);
+            linha.appendChild(linha_data_3);
+            tbody.appendChild(linha);
+        }
+    </script>
+
+</body>
+
+</html>

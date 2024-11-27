@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            margin-left: 40%;
+        }
+
+        button {
+            width: 100px;
+            height: 100px;
+            font-size: xx-large  ;
+            border: 0px;
+            background-color: rgb(36, 35, 35);
+        }
+
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .operadores {
+            background-color: rgb(82, 82, 82);
+        }
+
+        .limpar {
+            width: 415px;
+        }
+
+        tr td {
+            padding: 0px;
+        }
+
+        input {
+            width: 410px;
+            height: 100px;
+            background-color: azure;
+            border-radius: 4%;
+            border: 3px;
+            border-style: inset;
+            font-size: xx-large;
+            
+        }
+        button:hover p{
+            color: black;
+        }
+
+        p{
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <p><input type="text" id="inNumero" disabled="false"></p>
+    <p><button class="limpar" onclick="limpar()"><p>Limpar</p></button></p>
+
+    <table>
+        <tr>
+            <td><button onclick="adicionar('7')"><p>7</p></button></td>
+            <td><button onclick="adicionar('8')"><p>8</p></button></td>
+            <td><button onclick="adicionar('9')"><p>9</p></button></td>
+            <td><button class="operadores" onclick="adicionar('/')"><p>/</p></button></td>
+        </tr>
+        
+        <tr>
+            <td><button onclick="adicionar('4')"><p>4</p></button></td>
+            <td><button onclick="adicionar('5')"><p>5</p></button></td>
+            <td><button onclick="adicionar('6')"><p>6</p></button></td>
+            <td><button class="operadores" onclick="adicionar('*')"><p>x</p></button></td>
+        </tr>
+
+        <tr>
+            <td><button onclick="adicionar('1')"><p>1</p></button></td>
+            <td><button onclick="adicionar('2')"><p>2</p></button></td>
+            <td><button onclick="adicionar('3')"><p>3</p></button></td>
+            <td><button class="operadores" onclick="adicionar('-')"><p>-</p></button></td>
+        </tr>
+       
+        <tr>
+            <td><button onclick="adicionar('0')"><p>0</p></button></td>
+            <td><button onclick="adicionar('.')"><p>.</p></button></td>
+            <td><button class="operadores" onclick="igual()"><p>=</p></button></td>
+            <td><button class="operadores" onclick="adicionar('+')"><p>+</p></button></td>
+        </tr>
+
+    </table>
+
+    <script>
+        var inNumero = document.getElementById("inNumero");
+
+        function adicionar(valor) {
+            inNumero.value += valor;
+        }
+
+       
+        function limpar() {
+            inNumero.value = "";
+        }
+
+        function igual() {
+            try {
+                inNumero.value = eval(inNumero.value);
+            } catch (e) {
+                inNumero.value = "Erro";
+            }
+        }
+    </script>
+</body>
+
+</html>

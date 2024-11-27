@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Rendimentos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:lightsteelblue;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: rgb(70, 205, 250);
+            border-radius: 5px;
+            box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: rgb(0, 0, 0);
+        }
+
+        label {
+            font-weight: 600;
+            color: #000000;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="number"] {
+            text-align: center;
+            width: 48%;
+            padding: 10px;
+            margin: 5px;
+            margin-right: 5px;
+            border: none;
+            border-radius: 3px;
+            background-color: rgb(224, 251, 255);
+            color: #067BFF;
+            font-weight: bold;
+            box-shadow: inset 6px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background-color: #067BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #064ca1;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-weight: bolder;
+            color: #0004ff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Calculadora de Rendimento da Poupança</h1>
+        <p>
+            <label for="valorInicial">Valor Inicial (R$):</label>
+            <input type="number" id="valorInicial" min="0" step="10">
+            <label for="tempoInvestimento">Tempo de Investimento (meses): </label>
+            <input type="number" id="tempoInvestimento" min="1">
+            <label for="taxaJuros">Taxa de Juros Mensal (%):</label>
+            <input type="number" id="taxaJuros" min="0" step="0.01">
+        </p>
+        <button onclick="calcularRendimento()">Calcular</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function calcularRendimento() {
+            var valorInicial = parseFloat(document.getElementById("valorInicial").value);
+            var tempoInvestimento = parseInt(document.getElementById("tempoInvestimento").value);
+            var taxaJuros = parseFloat(document.getElementById("taxaJuros").value); // Fixed typo
+
+            if (!isNaN(valorInicial) && valorInicial > 0 &&
+                !isNaN(tempoInvestimento) && tempoInvestimento > 0 &&
+                !isNaN(taxaJuros) && taxaJuros >= 0) {
+
+                var rendimentoTotal = 0;
+                var rendimentos = "";
+
+                for (var i = 1; i <= tempoInvestimento; i++) {
+                    var rendimentoMensal = (valorInicial * (taxaJuros / 100));
+                    valorInicial += rendimentoMensal;
+                    rendimentos = rendimentos + "<br> Mês " + i + ": R$ " + valorInicial.toFixed(2);
+                    rendimentoTotal += rendimentoMensal;
+                }
+
+                document.getElementById("resultado").innerHTML = "<p>Rendimento Total: R$ " +
+                    rendimentoTotal.toFixed(2) + "</p>" + rendimentos;
+            } else {
+                document.getElementById("resultado").innerHTML = "Por favor, insira valores válidos.";
+            }
+        }
+    </script>
+</body>
+
+</html>

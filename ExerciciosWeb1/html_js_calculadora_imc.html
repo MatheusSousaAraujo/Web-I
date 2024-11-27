@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+
+</head>
+
+<body style="background-color: bisque;">
+
+    <h1>Calculadora de IMC</h1>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome"><br><br>
+    <label for="peso">Peso(kg):</label>
+    <input type="number" id="peso"><br><br>
+    <label for="altura">Altura(m):</label>
+    <input type="number" id="altura"><br><br>
+
+    <button onclick="calcularIMC()">Calcular IMC</button>
+
+    <h3 id="respostaNome"></h3>
+
+    <table border="1" style="background-color: white;">
+        <tr>
+            <th>Peso</th>
+            <th>Altura</th>
+            <th>IMC</th>
+        </tr>
+        <tr>
+            <td id="respostaPeso"></td>
+            <td id="respostaAltura"></td>
+            <td id="respostaIMC"></td>
+        </tr>
+
+    </table>
+
+    <script>
+        function calcularIMC() {
+            let nome = document.getElementById('nome').value;
+            let peso = parseFloat(document.getElementById('peso').value);
+            let altura = parseFloat(document.getElementById('altura').value);
+
+            if (nome == '') {
+                alert('Por favor, insira um nome.')
+                return
+            }
+            if (isNaN(peso)) {
+                alert('Por favor, insira valor válido para o peso.')
+                return
+            }
+            if (isNaN(altura)) {
+                alert('Por favor, insira valor válido para a altura.')
+                return
+            }
+            let imc = peso / (altura * altura);
+
+            let respostaNome = document.getElementById('respostaNome');
+            let respostaPeso = document.getElementById('respostaPeso');
+            let respostaAltura = document.getElementById('respostaAltura');
+            let respostaIMC = document.getElementById('respostaIMC');
+
+            respostaNome.innerHTML = "IMC de " + nome;
+            respostaPeso.innerHTML = peso;
+            respostaAltura.innerHTML = altura;
+
+            respostaIMC.innerHTML = imc.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>

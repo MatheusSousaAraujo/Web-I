@@ -1,0 +1,34 @@
+<body>
+    <form>
+        <label>Qual o seu nome?
+            <input id="nome" type="text">
+        </label>
+        <br>
+        <label>Qual língua você fala?
+            <select id="lingua">
+                <option value="in">Inglês</option>
+                <option value="es">Espanhol</option>
+            </select>
+        </label>
+        <br>
+        <button id="button" type="button" onclick="mensagem()">Clique aqui </button>
+        <div id="mensagem"></div>
+    </form>
+    <script>
+        function mensagem() {
+            var nome =
+                document.getElementById("nome").value;
+            var lingua =
+                document.getElementById("lingua").value;
+            var saudacao;
+            if (lingua === "es") {
+                saudacao = "Hola, " + nome;
+            } else if (lingua === "in") {
+                saudacao = "Hello, " + nome;
+            }
+
+            document.getElementById("mensagem").textContent =
+                saudacao;
+        };
+    </script>
+</body>
