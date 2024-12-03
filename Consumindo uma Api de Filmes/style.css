@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    text-align: center;
+}
+
+#movie-search {
+    padding: 10px;
+    margin-right: 10px;
+    width: 60%;
+}
+
+#search-btn {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+#movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.movie-card {
+    width: 200px;
+    margin: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+button {
+    width: 85px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 15px;
+
+}
+
+button:hover {
+    background-color: #005f6a;
+}
+
+#movie-details {
+    display: none;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#favorite-movies {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#favorites-list {
+    list-style-type: none;
+}
+
+/* Logo redonda */
+.logo {
+    border-radius: 50%;
+    /* Faz a imagem ficar redonda */
+    width: 80px;
+    /* Largura da logo */
+    height: 80px;
+    /* Altura da logo */
+    object-fit: cover;
+    /* Faz a imagem se ajustar sem distorcer */
+    margin-right: 30px;
+    /* Separação da logo com os itens do menu */
+}
+
+/* Aumentando o campo de pesquisa */
+#movie-search {
+    width: 300px;
+    /* Largura maior */
+    height: 45px;
+    /* Altura maior */
+}
+
+/* Estilos para a busca de filmes */
+#movie-list {
+    margin-top: 20px;
+}
+
+#movie-details {
+    padding: 20px;
+    background: #fff;
+    border-radius: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 80%;
+    overflow: scroll;
+    height: 90vh;
+    z-index: 100;
+}
+
+#telaPreta {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #000000aa;
+    z-index: 99;
+}
+
+/* Estilo para a lista de favoritos */
+#favorite-movies {
+    margin-top: 20px;
+}
+
+/* Background mais claro com a imagem de fundo */
+body {
+    background-image: url('imagem2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    /* Camada de sobreposição mais clara */
+    position: relative;
+}
+
+/* Estilo para o cabeçalho */
+header {
+    background-color: rgb(255, 255, 255);
+    /* Fundo claro e com 60% de opacidade */
+    z-index: 1;
+    /* Coloca o cabeçalho por cima da camada */
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilo para os resultados da busca */
+.movie {
+    margin-bottom: 15px;
+}
+
+.add-favorite-btn {
+    margin-top: 10px;
+}
+
+#favorite-movies {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#favorites-list {
+    display: flex;
+}
